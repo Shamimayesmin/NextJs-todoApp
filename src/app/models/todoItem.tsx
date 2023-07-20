@@ -3,12 +3,14 @@ import React, { useState } from "react";
 // icons
 import { FiEdit } from "react-icons/fi";
 import { MdDeleteForever } from "react-icons/md";
+import { TodoItemProps } from "./todoInterface";
 
-interface TodoItemProps {
-	todo: TodoItem;
-	onDelete: (id: number) => void;
-	onUpdate: (updatedTodo: TodoItem) => void;
-}
+// create an interface for to-do items props
+// interface TodoItemProps {
+// 	todo: TodoItem;
+// 	onDelete: (id: number) => void;
+// 	onUpdate: (updatedTodo: TodoItem) => void;
+// }
 
 const TodoItem: React.FC<TodoItemProps> = ({ todo, onDelete, onUpdate }) => {
 	const [isEdit, setIsEdit] = useState(false);
@@ -38,6 +40,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onDelete, onUpdate }) => {
 	return (
 		<div className="flex justify-center items-center">
 			{/* implemented conditional rendaring {if need editing show input otherwise show checkbox for mark as completed}  */}
+
 			{isEdit ? (
 				<div>
 					<input
@@ -59,7 +62,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onDelete, onUpdate }) => {
 						type="checkbox"
 						checked={todo.completed}
 						onChange={handleToggleCompleted}
-						className="mr-4"
+						className="mr-2"
 					/>
 					<span
 						style={{
@@ -70,24 +73,24 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onDelete, onUpdate }) => {
 						{todo.text}
 					</span>
 					<button
-						className="bg-blue-300 p-2 border-2 rounded-lg ml-4 my-3"
+						className="bg-blue-300 p-1 border-2 rounded-lg ml-4 my-2"
 						onClick={handleEdit}
 					>
-						{" "}
+						
 						<span className="flex items-center gap-2">
 							Edit
 							<FiEdit />
-						</span>{" "}
+						</span>
 					</button>
 					<button
 						className="bg-red-400 p-2 border-2 rounded-lg ml-4"
 						onClick={handleDelete}
 					>
 						<span className="flex items-center gap-2">
-							{" "}
+							
 							Delete
 							<MdDeleteForever />
-						</span>{" "}
+						</span>
 					</button>
 				</>
 			)}

@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { deleteTodo, getTodos, updateTodo } from "./todos";
 import TodoItem from "./todoItem";
+import { TodoItemType } from "./todoInterface";
 
 const TodoList: React.FC = () => {
-	const [todos, setTodos] = useState<TodoItem[]>(getTodos());
+	const [todos, setTodos] = useState<TodoItemType[]>(getTodos());
 	const [newTodoText, setNewTodoText] = useState<string>("");
 
 	// Add a new to-do
 	const handleAddTodo = () => {
 		if (newTodoText.trim() === "") return;
-		const newTodo: TodoItem = {
+		const newTodo: TodoItemType = {
 			id: Date.now(),
 			text: newTodoText,
 			completed: false,
@@ -25,7 +26,7 @@ const TodoList: React.FC = () => {
 	};
 
 	// Update To-do
-	const handleUpdateTodo = (updatedTodo: TodoItem) => {
+	const handleUpdateTodo = (updatedTodo: TodoItemType) => {
 		updateTodo(updatedTodo);
 		setTodos(
 			todos.map((todo) => (todo.id === updatedTodo.id ? updatedTodo : todo))
