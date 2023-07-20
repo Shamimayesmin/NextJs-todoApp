@@ -2,8 +2,8 @@ import { TodoItemType } from "./todoInterface";
 
 let todos: TodoItemType[] = [
 	
-	{ id: 1, text: "Buy groceries", completed: false },
-	{ id: 2, text: "Do homework", completed: false },
+	{ id: "1", text: "Buy groceries", completed: false },
+	{ id: "2", text: "Do homework", completed: false },
 ];
 
 // create function for getting all the task
@@ -25,7 +25,7 @@ export const updateTodo = (updatedTodo: TodoItemType): TodoItemType => {
 };
 
 
-// Delete the task
-export const deleteTodo = (id: number): void => {
+// filter todos for delete specific one
+export const deleteTodo = (id: string): void => {
 	todos = todos.filter((todo) => todo.id !== id);
 };

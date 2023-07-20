@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { deleteTodo, getTodos, updateTodo } from "./todos";
 import TodoItem from "./todoItem";
 import { TodoItemType } from "./todoInterface";
-// import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 const TodoList: React.FC = () => {
 	const [todos, setTodos] = useState<TodoItemType[]>(getTodos());
@@ -12,7 +12,8 @@ const TodoList: React.FC = () => {
 	const handleAddTodo = () => {
 		if (newTodoText.trim() === "") return;
 		const newTodo: TodoItemType = {
-			id: Date.now(),
+			// id: Date.now(),
+			id: uuidv4(),
 			text: newTodoText,
 			completed: false,
 		};
@@ -21,7 +22,7 @@ const TodoList: React.FC = () => {
 	};
 
 	// Delete to-do
-	const handleDeleteTodo = (id: number) => {
+	const handleDeleteTodo = (id: string) => {
 		deleteTodo(id);
 		setTodos(todos.filter((todo) => todo.id !== id));
 	};

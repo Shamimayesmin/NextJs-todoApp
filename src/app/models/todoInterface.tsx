@@ -1,5 +1,6 @@
 export interface TodoItemType {
-	id: number;
+	// id: number;
+	id: string;
 	text: string;
 	completed: boolean;
 }
@@ -7,6 +8,6 @@ export interface TodoItemType {
 // create an interface for to-do items props
 export interface TodoItemProps {
 	todo: TodoItemType;
-	onDelete: (id: number) => void;
+	onDelete: (id: string) => void;
 	onUpdate: (updatedTodo: TodoItemType) => void;
 }
