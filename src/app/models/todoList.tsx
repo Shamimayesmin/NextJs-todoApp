@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { getTodos } from "./todos";
 
 
 
 const TodoList: React.FC = () => {
-
+    const [todos, setTodos] = useState<TodoItem[]>(getTodos());
+	const [newTodoText, setNewTodoText] = useState<string>("");
 	
     
 	return (
