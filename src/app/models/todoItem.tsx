@@ -1,16 +1,9 @@
 import React, { useState } from "react";
 
-// icons
+// Icons
 import { FiEdit } from "react-icons/fi";
 import { MdDeleteForever } from "react-icons/md";
 import { TodoItemProps } from "./todoInterface";
-
-// create an interface for to-do items props
-// interface TodoItemProps {
-// 	todo: TodoItem;
-// 	onDelete: (id: number) => void;
-// 	onUpdate: (updatedTodo: TodoItem) => void;
-// }
 
 const TodoItem: React.FC<TodoItemProps> = ({ todo, onDelete, onUpdate }) => {
 	const [isEdit, setIsEdit] = useState(false);

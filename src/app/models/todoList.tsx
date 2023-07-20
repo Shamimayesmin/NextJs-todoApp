@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { deleteTodo, getTodos, updateTodo } from "./todos";
 import TodoItem from "./todoItem";
 import { TodoItemType } from "./todoInterface";
+// import { v4 as uuidv4 } from 'uuid';
 
 const TodoList: React.FC = () => {
 	const [todos, setTodos] = useState<TodoItemType[]>(getTodos());
