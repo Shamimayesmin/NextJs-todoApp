@@ -1,6 +1,6 @@
 "use client";
 
-import TodoList from "./models/todoList";
+import TodoList from "./todoList";
 
 const Home: React.FC = () => {
 	return <TodoList></TodoList>;

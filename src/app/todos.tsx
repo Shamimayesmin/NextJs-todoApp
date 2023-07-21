@@ -1,7 +1,6 @@
 import { TodoItemType } from "./todoInterface";
 
 let todos: TodoItemType[] = [
-	
 	{ id: "1", text: "Buy groceries", completed: false },
 	{ id: "2", text: "Do homework", completed: false },
 ];
@@ -23,7 +22,6 @@ export const updateTodo = (updatedTodo: TodoItemType): TodoItemType => {
 	todos[index] = updatedTodo;
 	return updatedTodo;
 };
-
 
 // filter todos for delete specific one
 export const deleteTodo = (id: string): void => {

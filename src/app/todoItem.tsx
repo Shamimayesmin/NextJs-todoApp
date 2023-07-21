@@ -69,7 +69,6 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onDelete, onUpdate }) => {
 						className="bg-blue-300 p-1 border-2 rounded-lg ml-4 my-2"
 						onClick={handleEdit}
 					>
-						
 						<span className="flex items-center gap-2">
 							Edit
 							<FiEdit />
@@ -80,7 +79,6 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onDelete, onUpdate }) => {
 						onClick={handleDelete}
 					>
 						<span className="flex items-center gap-2">
-							
 							Delete
 							<MdDeleteForever />
 						</span>
